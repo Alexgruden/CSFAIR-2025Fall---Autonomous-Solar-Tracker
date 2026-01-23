@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Robot Remote</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { 
+            background-color: #222; color: white; font-family: sans-serif; 
+            text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0;
+        }
+        h1 { margin-bottom: 30px; }
+        
+        /* The D-Pad Grid */
+        .control-grid {
+            display: grid;
+            grid-template-columns: 80px 80px 80px;
+            grid-template-rows: 80px 80px 80px;
+            gap: 10px;
+        }
+
+        button {
+            background-color: #444; color: white; border: none; border-radius: 10px;
+            font-size: 24px; cursor: pointer;
+            touch-action: manipulation; /* Makes mobile tapping faster */
+        }
+        button:active { background-color: #00ff00; color: black; transform: scale(0.95); }
+        
+        /* Specific Button Placements */
+        .btn-up    { grid-column: 2; grid-row: 1; }
+        .btn-left  { grid-column: 1; grid-row: 2; }
+        .btn-right { grid-column: 3; grid-row: 2; }
+        .btn-down  { grid-column: 2; grid-row: 3; }
+        
+    </style>
+</head>
+<body>
+
+    <h1>Manual Override</h1>
+
+    <div class="control-grid">
+        <button class="btn-up"    onclick="move('tilt', 'up')">⬆️</button>
+        <button class="btn-left"  onclick="move('pan', 'left')">⬅️</button>
+        <button class="btn-right" onclick="move('pan', 'right')">➡️</button>
+        <button class="btn-down"  onclick="move('tilt', 'down')">⬇️</button>
+    </div>
+
+    <script>
+        function move(axis, dir) {
+            // Send command to Python without reloading the page
+            fetch('/move/' + axis + '/' + dir);
+        }
+    </script>
+
+</body>
+</html>
