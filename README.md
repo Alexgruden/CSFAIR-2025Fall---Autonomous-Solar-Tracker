@@ -25,10 +25,10 @@ A Raspberry Pi tracker that points itself at the brightest light source. Four ph
 | 6 V supply | Powers the servos only. Ground shared with the Pi |
 
 ## Servo Head
-![Servo head](servo_head.png)
+![Servo head](docs/servo_head.png)
 
 ## Schematic
-![System-pdf](solar-tracker-picture.pdf)
+![System-pdf](docs/solar-tracker-picture.pdf)
 
 
 ## Running It
