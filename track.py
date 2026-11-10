@@ -3,7 +3,7 @@ import json
 import csv
 import time
 import os
-from flask import Flask, render_template, jsonifys
+from flask import Flask, render_template, jsonify
 from gpiozero import AngularServo, MCP3008
 from gpiozero.pins.pigpio import PiGPIOFactory
 
@@ -148,7 +148,7 @@ def data():
 	return jsonify(system_state)
 
 if __name__ == '__main__':
-	tracker = threading.Thread(target=tracker_loop)
+	tracker = threading.Thread(target=tracking_loop)
 	tracker.daemon = True
 	tracker.start()
 

@@ -1,0 +1,11 @@
+# KiCad
+*-backups/
+*.kicad_prl
+~*.kicad_*
+*.kicad_sch-bak
+*.kicad_pcb-bak
+fp-info-cache
+*.bak
+.history/
+
+.DS_Store

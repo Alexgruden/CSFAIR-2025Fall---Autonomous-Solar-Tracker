@@ -16,7 +16,7 @@ TILT_MAX = 90
 # --- HARDWARE SETUP ---
 factory = PiGPIOFactory()
 pan = AngularServo(PAN_PIN, min_angle=-135, max_angle=135, min_pulse_width=0.0005, max_pulse_width=0.0025, pin_factory=factory)
-tilt = AngularServo(TILT_PIN, min_angle=-90, max_angle=135, min_pulse_width=0.0005, max_pulse_width=0.0025, pin_factory=factory)
+tilt = AngularServo(TILT_PIN, min_angle=-90, max_angle=90, min_pulse_width=0.0005, max_pulse_width=0.0025, pin_factory=factory)
 
 # GLOBAL STATE (Where is the robot now?)
 current_pan = 0
